@@ -55,7 +55,7 @@ if ($hassiteconfig) {
         'local_enrolcalendar/categoryid',
         get_string('setting:categoryid', 'local_enrolcalendar'),
         get_string('setting:categoryid_desc', 'local_enrolcalendar'),
-        0
+        1
     );
     $categorysetting->set_updatedcallback(function () {
         \core\task\manager::queue_adhoc_task(new \local_enrolcalendar\task\sync_events_adhoc(), true);
