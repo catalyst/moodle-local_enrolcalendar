@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2026071401;
+$plugin->version = 2026071402;
 $plugin->release = '1.0.0';
 $plugin->requires = 2024100100; // Moodle 4.5.
 $plugin->component = 'local_enrolcalendar';
