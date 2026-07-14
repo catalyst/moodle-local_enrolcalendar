@@ -14,9 +14,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace local_enrolcalendar\task;
+namespace local_enrolcalendar;
 
 use advanced_testcase;
+use local_enrolcalendar\task\sync_events;
 
 /**
  * Unit tests for the enrolcalendar tasks.
@@ -26,10 +27,8 @@ use advanced_testcase;
  * @copyright   2026 Catalyst IT Australia Pty Ltd
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @covers      \local_enrolcalendar\task\sync_events
- * @covers      \local_enrolcalendar\task\sync_events_adhoc
  */
-class task_test extends advanced_testcase {
-
+final class task_test extends advanced_testcase {
     protected function setUp(): void {
         parent::setUp();
         $this->resetAfterTest();

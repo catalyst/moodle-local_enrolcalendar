@@ -23,13 +23,13 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+$string['disabled'] = 'Disabled';
+$string['eventname'] = '{$a}';
 $string['pluginname'] = 'Enrolment calendar events';
+$string['privacy:metadata'] = 'This plugin does not store any personal user data. It creates course-level calendar events visible to enrolled users.';
+$string['setting:categoryid'] = 'Category';
+$string['setting:categoryid_desc'] = 'Courses in this category (and its subcategories) will have calendar events created for enrolled users. Changing this setting will trigger a full sync via an adhoc task.';
 $string['setting:description'] = 'This plugin creates personal calendar events for users when they are enrolled in courses within a configured category. Events link to the course and reflect the course start date. Events are automatically updated upon category, course or enrolment update. An additional <a href="{$a}">scheduled task</a> runs daily to reconcile events.';
 $string['setting:enabled'] = 'Enable';
 $string['setting:enabled_desc'] = 'When disabled, all calendar events created by this plugin will be deleted. Changing this setting will trigger a full sync via an adhoc task.';
-$string['setting:categoryid'] = 'Category';
-$string['setting:categoryid_desc'] = 'Courses in this category (and its subcategories) will have calendar events created for enrolled users. Changing this setting will trigger a full sync via an adhoc task.';
-$string['disabled'] = 'Disabled';
-$string['eventname'] = '{$a}';
 $string['synctask'] = 'Sync enrolment calendar events';
-$string['privacy:metadata'] = 'This plugin does not store any personal user data. It creates course-level calendar events visible to enrolled users.';

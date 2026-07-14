@@ -27,8 +27,7 @@ use advanced_testcase;
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @covers      \local_enrolcalendar\observer
  */
-class observer_test extends advanced_testcase {
-
+final class observer_test extends advanced_testcase {
     protected function setUp(): void {
         parent::setUp();
         $this->resetAfterTest();
@@ -37,6 +36,8 @@ class observer_test extends advanced_testcase {
 
     /**
      * Helper to get course event count.
+     * @param int $courseid
+     * @return int event count
      */
     private function get_event_count(int $courseid): int {
         global $DB;
