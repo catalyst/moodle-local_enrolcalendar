@@ -27,8 +27,7 @@ use advanced_testcase;
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @covers      \local_enrolcalendar\manager
  */
-class manager_test extends advanced_testcase {
-
+final class manager_test extends advanced_testcase {
     protected function setUp(): void {
         parent::setUp();
         $this->resetAfterTest();

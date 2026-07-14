@@ -31,7 +31,6 @@ require_once($CFG->dirroot . '/calendar/lib.php');
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class manager {
-
     /** @var string Component name used to tag calendar events */
     public const COMPONENT = 'local_enrolcalendar';
 
@@ -225,8 +224,8 @@ class manager {
                     // Nothing is in scope, delete all.
                     $outofscope = $courseids;
                 } else {
-                    list($insql, $params) = $DB->get_in_or_equal($courseids, SQL_PARAMS_NAMED);
-                    list($catsql, $catparams) = $DB->get_in_or_equal($categoryids, SQL_PARAMS_NAMED, 'cat', false);
+                    [$insql, $params] = $DB->get_in_or_equal($courseids, SQL_PARAMS_NAMED);
+                    [$catsql, $catparams] = $DB->get_in_or_equal($categoryids, SQL_PARAMS_NAMED, 'cat', false);
                     $sql = "SELECT id FROM {course} WHERE id $insql AND category $catsql";
                     $outofscope = $DB->get_fieldset_sql($sql, array_merge($params, $catparams));
                 }
@@ -242,7 +241,7 @@ class manager {
         }
 
         // Step 2: For courses in scope, ensure events exist and are up to date.
-        list($catsql, $catparams) = $DB->get_in_or_equal($categoryids, SQL_PARAMS_NAMED);
+        [$catsql, $catparams] = $DB->get_in_or_equal($categoryids, SQL_PARAMS_NAMED);
         $courses = $DB->get_records_select(
             'course',
             "category $catsql AND startdate > 0",

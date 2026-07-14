@@ -29,8 +29,11 @@ if ($hassiteconfig) {
     $settings = new admin_settingpage('local_enrolcalendar', get_string('pluginname', 'local_enrolcalendar'));
     $ADMIN->add('localplugins', $settings);
 
-    $taskurl = new moodle_url('/admin/tool/task/scheduledtasks.php', [],
-        'local_enrolcalendar-task-sync_events');
+    $taskurl = new moodle_url(
+        '/admin/tool/task/scheduledtasks.php',
+        [],
+        'local_enrolcalendar-task-sync_events'
+    );
     $settings->add(new admin_setting_heading(
         'local_enrolcalendar/description',
         '',
@@ -43,7 +46,7 @@ if ($hassiteconfig) {
         get_string('setting:enabled_desc', 'local_enrolcalendar'),
         0
     );
-    $enabledsetting->set_updatedcallback(function() {
+    $enabledsetting->set_updatedcallback(function () {
         \core\task\manager::queue_adhoc_task(new \local_enrolcalendar\task\sync_events_adhoc(), true);
     });
     $settings->add($enabledsetting);
@@ -54,7 +57,7 @@ if ($hassiteconfig) {
         get_string('setting:categoryid_desc', 'local_enrolcalendar'),
         0
     );
-    $categorysetting->set_updatedcallback(function() {
+    $categorysetting->set_updatedcallback(function () {
         \core\task\manager::queue_adhoc_task(new \local_enrolcalendar\task\sync_events_adhoc(), true);
     });
     $settings->add($categorysetting);

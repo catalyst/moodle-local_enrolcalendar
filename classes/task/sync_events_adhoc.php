@@ -29,7 +29,6 @@ use local_enrolcalendar\manager;
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class sync_events_adhoc extends \core\task\adhoc_task {
-
     /**
      * Execute the task.
      */
